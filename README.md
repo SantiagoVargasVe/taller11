@@ -14,3 +14,18 @@ a través de un POST y con el siguiente formato JSON:
     	"id": 1
     	}
     }
+
+Para registrarse es através de la ruta http://localhost:8080/api/auth/singup con un metodo POST y el formato del body debe ser un JSON con la siguiente información:
+
+    {
+    	"username": "aquí va el nombre de usaurio",
+    	"email": "aquí va el email ",
+    	"password": "aquí va la contraseña",
+    	"roles":["user","moderator, "admin"]
+    }
+
+El arreglo de roles puede tener hasta 1 solo elemento o los 3 roles.
+
+Para loguearnos usaremos la siguiente ruta http://localhost:8080/api/auth/signin por medio de un metodo POST y el cuerpo en formato JSON debera tener el nombre de usuario y la contraseña. Se espera que la respuesta sea los datos del usuario y el token de acceso el cual usaremos para los metodos antes menciones, es decir, obtener todos los usuarios y añadir comentarios.
+
+Para usar el token tendremos que agreagar una nuevo header a nuestra solictud con con el nombre `x-access-token` y su valor sera el token obtenido al hacer login.
